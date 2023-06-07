@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+<div class="component-container">
+  <p class="card2">Existem {{ hotels.length }} Hóteis disponíveis.</p>
+
+  <section class="card" *ngFor="let hotel of hotels">
+    <div class="panel-body">
+      <div class="product-info">
+        <div>
+          <h2>{{ hotel.name | uppercase }}</h2>
+          <h3>{{ hotel.city }}</h3>
+          <div class="address-info">
+            <div>{{ getHotelAddress(hotel) }},</div>
+            <div>{{ hotel.zip | uppercase }}</div>
+          </div>
+          <h4>{{ 'Quartos Disponíveis: ' + hotel.number_of_rooms }}</h4>
+          <h5>{{ hotel.country | uppercase }}</h5>
+          <p class="description">{{ hotel.hotel_description }}</p>
+          <button class="details-btn" (click)="viewDetail(hotel.hotel_id)">Detalhes</button>
+        </div>
+      </div>
+      <div class="photo">
+        <img [src]="fake_hotel_image">
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER FEIO nao adicionar talvez (<app-footer></app-footer>) -->

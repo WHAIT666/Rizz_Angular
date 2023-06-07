@@ -1,0 +1,62 @@
+.card2 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: #9CADCE 0px 3px 15px;
+}
+
+.panel-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+}
+
+.product-info {
+  flex: 1 1 auto;
+}
+
+.product-info h2 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.address-info {
+  margin-top: 5px;
+}
+
+.address-info div {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.photo {
+  margin-left: 30px;
+}
+
+.photo img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.description {
+  font-style: italic;
+}
+
+.details-btn {
+  margin-left: auto;
+  padding: 5px 10px;
+  background-color: #9CADCE;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

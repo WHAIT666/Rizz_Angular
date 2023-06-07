@@ -1,0 +1,28 @@
+.hotel-image {
+    width: 500px;
+    height: 500px;
+    margin:50px auto;
+}
+
+.hotel-image img{
+    width: 100%;
+}
+
+.review__score {background-color: #e6b531;}
+
+.star__rating img{height: 24px; width: 24px;}
+
+.facilities__block {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.facilities__block p {
+  margin-right: 15px;
+  padding: 10px;
+  border: 1px solid #c8c8ff;
+}
+
+@media screen and (max-width: 600px) {
+    .hotel-image {width: 100%; height: 300px;}
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<app-navbar></app-navbar>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Landing Page</title>
+
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400"
+      rel="stylesheet"
+    />
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="landing-page.component.css" />
+
+  </head>
+
+  <body>
+    <div id="booking" class="section">
+      <div class="section-center">
+        <div class="container">
+          <div class="row">
+            <div class="booking-form">
+              <form>
+                <div class="row no-margin">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <span class="form-label">Destination</span>
+                      <select
+                        class="form-control"
+                        [(ngModel)]="destination"
+                        name="destination"
+                      >
+                        <option
+                          *ngFor="let destination of destinations"
+                          [value]="destination.region_id"
+                        >
+                          {{ destination.name }}
+                        </option>
+                      </select>
+                      <span class="select-arrow"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row no-margin">
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <span class="form-label">Check-In</span>
+                          <input
+                            class="form-control"
+                            type="date"
+                            [(ngModel)]="checkinDate"
+                            name="checkinDate"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <span class="form-label">Check-Out</span>
+                          <input
+                            class="form-control"
+                            type="date"
+                            [(ngModel)]="checkoutDate"
+                            name="checkoutDate"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <span class="form-label">Adultos</span>
+                          <select
+                            class="form-control"
+                            [(ngModel)]="adultsNumber"
+                            name="adultsNumber"
+                          >
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                          </select>
+                          <span class="select-arrow"></span>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-btn">
+                      <button class="submit-btn" (click)="onSearch()">
+                        Procurar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- FOOTER FEIO nao adicionar  t alvez  (<app-footer></app-footer>)-->
