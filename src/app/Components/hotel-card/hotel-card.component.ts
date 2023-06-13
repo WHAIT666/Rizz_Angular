@@ -11,9 +11,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class HotelCardComponent implements OnInit {
   hotelDetails: any = '';
   hotelOtherDetails: any = '';
-  hotelImage: any = []
+  hotelImage: any = [];
   hotelId: string = '';
   hotelName: string = '';
+  reviews: any[] = [];
 
   constructor(
     private hotelApiService: hotelApiService,
@@ -25,32 +26,41 @@ export class HotelCardComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.hotelId = params['id'];
     });
-    //todos os detalhes
+    // Fetch all the details
     this.hotelApiService.fetchHotelDetails(this.hotelId).subscribe((res: any) => {
       this.hotelDetails = res;
       this.hotelName = res.name; // Assign the hotel's name to the hotelName variable
     });
-  
-  
 
-    //Imagens do hotel
+    // Fetch hotel images
     this.hotelApiService.fetchHotelPhotos(this.hotelId).subscribe((res: any) => {
-      this.hotelImage = res[0].url_1440
+      this.hotelImage = res[0].url_1440;
     });
 
-    //RATING E REVIEWS
+    // Fetch rating and reviews
     this.hotelApiService.fetchOtherData(this.hotelId).subscribe((res: any) => {
       this.hotelOtherDetails = res;
+      this.reviews = res.reviews; // Assign the fetched reviews to the reviews property
     });
   }
 
-  
+  getRatingText(score: number): string {
+    if (score >= 9) {
+      return 'Excelente';
+    } else if (score >= 8) {
+      return 'Muito Bom';
+    } else if (score >= 7) {
+      return 'Bom';
+    } else {
+      return 'Razoável';
+    }
+  }
 
   isEmpty(obj: any) {
     return Object.keys(obj).length === 0;
   }
 
   roundPrice(val: any) {
-    return Math.floor(val)
+    return Math.floor(val);
   }
 }

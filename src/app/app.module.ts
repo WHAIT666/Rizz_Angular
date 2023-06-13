@@ -8,7 +8,7 @@ import { HotelCardComponent } from './Components/hotel-card/hotel-card.component
 import { HotelListComponent } from './Components/hotel-list/hotel-list.component';
 import { LandingPageComponent } from './Components/landing-page/landing-page.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
-import { ViewPageComponent } from './Components/view-page/view-page.component';
+
 import { BookingapiComponent } from './Components/bookingapi/bookingapi.component';
 import { FormsModule } from '@angular/forms';
 
@@ -20,7 +20,6 @@ import { FormsModule } from '@angular/forms';
     HotelListComponent,
     LandingPageComponent,
     NavbarComponent,
-    ViewPageComponent,
     BookingapiComponent
   ],
   imports: [

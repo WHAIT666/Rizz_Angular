@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class LandingPageService {
   private headers = new HttpHeaders({
-    'X-RapidAPI-Key': '3649e7de23mshd4831c522912dd6p167942jsn4e96419c6f8b',
+    'X-RapidAPI-Key': '5b94a6310amsh271e8533bde539cp147d31jsn8e2a2935572c',
     'X-RapidAPI-Host': 'booking-com.p.rapidapi.com',
   });
 
